@@ -1,0 +1,9 @@
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\bin\x86\Debug\AlliancerLinkToDispenserHostReadConfig.dll
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\bin\x86\Debug\AlliancerLinkToDispenserHostReadConfig.pdb
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\bin\x86\Debug\AlliancerLinkToDispenserHostReadConfig.xml
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\bin\x86\Debug\Dapper.dll
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\bin\x86\Debug\Dapper.xml
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\obj\x86\Debug\AlliancerLinkToDispenserHostReadConfig.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\obj\x86\Debug\AlliancerLinkToDispenserHostReadConfig.csproj.CopyComplete
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\obj\x86\Debug\AlliancerLinkToDispenserHostReadConfig.dll
+C:\Users\Administrator\source\repos\MultipleBLLs\AlliancerLinkToDispenserHostReadConfig\obj\x86\Debug\AlliancerLinkToDispenserHostReadConfig.pdb

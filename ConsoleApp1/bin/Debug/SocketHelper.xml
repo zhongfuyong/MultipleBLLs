@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SocketHelper</name>
+    </assembly>
+    <members>
+        <member name="M:SocketHelper.ByteArrayHelper.ToArray(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            按照先后顺序合并字节数组，并返回合并后的字节数组。
+            </summary>
+            <param name="firstBytes">第一个字节数组</param>
+            <param name="firstIndex">第一个字节数组的开始截取索引</param>
+            <param name="firstLength">第一个字节数组的截取长度</param>
+            <param name="secondBytes">第二个字节数组</param>
+            <param name="secondIndex">第二个字节数组的开始截取索引</param>
+            <param name="secondLength">第二个字节数组的截取长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:SocketHelper.ByteArrayHelper.AddLength(System.Byte[])">
+            <summary>
+            添加数组长度在数组的开始
+            </summary>
+            <param name="buffer">源数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:SocketHelper.ByteArrayHelper.ReadContent(System.Int32,System.Byte[]@)">
+            <summary>
+            读取内容
+            </summary>
+            <param name="contentLength"></param>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocketHelper.MyAsyncState">
+            <summary>
+            异步数据类
+            </summary>
+        </member>
+        <member name="P:SocketHelper.MyAsyncState.GetSocket">
+            <summary>
+            套接字
+            </summary>
+        </member>
+        <member name="P:SocketHelper.MyAsyncState.BufferSize">
+            <summary>
+            数据长度
+            </summary>
+        </member>
+        <member name="P:SocketHelper.MyAsyncState.Buffer">
+            <summary>
+            缓存集合
+            </summary>
+        </member>
+        <member name="T:SocketHelper.MySocketClient">
+            <summary>
+            套接字客户端
+            </summary>
+        </member>
+        <member name="T:SocketHelper.MySocketClient.NewMessages">
+            <summary>
+            新消息委托
+            </summary>
+            <param name="bufferSize"></param>
+            <param name="buffer"></param>
+        </member>
+        <member name="E:SocketHelper.MySocketClient.NewMessage">
+            <summary>
+            新消息委托
+            </summary>
+        </member>
+        <member name="T:SocketHelper.MySocketClient.TCPServerDisconnect">
+            <summary>
+            服务断开委托
+            </summary>
+        </member>
+        <member name="E:SocketHelper.MySocketClient.ServerDisconnect">
+            <summary>
+            服务断开委托
+            </summary>
+        </member>
+        <member name="T:SocketHelper.MySocketClient.ServerConnectCallBacks">
+            <summary>
+            连接服务回调
+            </summary>
+            <param name="isSuccess">是否成功</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="E:SocketHelper.MySocketClient.ServerConnectCallBack">
+            <summary>
+            连接服务回调
+            </summary>
+        </member>
+        <member name="P:SocketHelper.MySocketClient.SocketClient">
+            <summary>
+            套接字客户端
+            </summary>
+        </member>
+        <member name="F:SocketHelper.MySocketClient.TemporaryBuffer">
+            <summary>
+            临时缓存区
+            </summary>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.Connect(System.Net.IPAddress,System.Int32)">
+            <summary>
+            连接套接字服务
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="port">端口</param>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.ConnectCallBack(System.IAsyncResult)">
+            <summary>
+            连接服务回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.ReceiveCallBack(System.IAsyncResult)">
+            <summary>
+            监控消息回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.HandleMessage(System.Int32,System.Byte[])">
+            <summary>
+            处理消息
+            </summary>
+            <param name="bufferLength">消息长度</param>
+            <param name="buffer">缓存区</param>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.NewMessageCallBack(System.IAsyncResult)">
+            <summary>
+            接收新消息回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.SendData(System.Byte[])">
+            <summary>
+            发送消息
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.SendCallBack(System.IAsyncResult)">
+            <summary>
+            发送消息回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketClient.Close">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="T:SocketHelper.MySocketServer">
+            <summary>
+            套接字服务端
+            </summary>
+        </member>
+        <member name="F:SocketHelper.MySocketServer.BufferMap">
+            <summary>
+            套接字,临时缓冲区
+            </summary>
+        </member>
+        <member name="T:SocketHelper.MySocketServer.NewMessages">
+            <summary>
+            有新消息委托
+            </summary>
+            <param name="socketClient">套接字</param>
+            <param name="bufferSize">数据长度</param>
+            <param name="buffer">数据</param>
+        </member>
+        <member name="T:SocketHelper.MySocketServer.NewClients">
+            <summary>
+            有新客户端连接委托
+            </summary>
+            <param name="socketClient">新连接的套接字</param>
+        </member>
+        <member name="E:SocketHelper.MySocketServer.NewMessage">
+            <summary>
+            接收新消息委托
+            </summary>
+        </member>
+        <member name="E:SocketHelper.MySocketServer.NewClient">
+            <summary>
+            新客户端连接委托
+            </summary>
+        </member>
+        <member name="T:SocketHelper.MySocketServer.ClientOffLines">
+            <summary>
+            客户端掉线委托
+            </summary>
+            <param name="LocalEndPoint">客户端终结点</param>
+        </member>
+        <member name="E:SocketHelper.MySocketServer.ClientOffLine">
+            <summary>
+            客户端掉线委托
+            </summary>
+        </member>
+        <member name="P:SocketHelper.MySocketServer.SocketServer">
+            <summary>
+            服务套接字
+            </summary>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.StartSocketServer(System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            启动服务
+            </summary>
+            <param name="iPAddress">IP地址</param>
+            <param name="port">端口</param>
+            <param name="listenCount">可连接总数</param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.AcceptCallBack(System.IAsyncResult)">
+            <summary>
+            监控连接回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.NewClientCallBack(System.IAsyncResult)">
+            <summary>
+            新客户端连接委托通知回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.ReceiveCallBack(System.IAsyncResult)">
+            <summary>
+            监控消息回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.HandleMessage(System.Net.Sockets.Socket,System.Int32,System.Byte[])">
+            <summary>
+            处理消息
+            </summary>
+            <param name="socket">客户端套接字</param>
+            <param name="bufferLength">消息长度</param>
+            <param name="buffer">缓存区</param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.NewMessageCallBack(System.IAsyncResult)">
+            <summary>
+            新消息委托回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.SendData(System.Net.Sockets.Socket,System.Byte[])">
+            <summary>
+            发送信息
+            </summary>
+            <param name="socket"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.SendCallBack(System.IAsyncResult)">
+            <summary>
+            发送消息回调
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:SocketHelper.MySocketServer.CloseServer">
+            <summary>
+            关闭服务
+            </summary>
+        </member>
+    </members>
+</doc>

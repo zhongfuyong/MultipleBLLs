@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Alliancer.OPCHelper</name>
+    </assembly>
+    <members>
+        <member name="T:Alliancer.OPCHelper.MyOPCAE">
+            <summary>
+            OPC AE帮助类
+            </summary>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCAE.AEOPCServer">
+            <summary>
+            AE服务器
+            </summary>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCAE.factory">
+            <summary>
+            OPC工厂
+            </summary>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCAE.subscription">
+            <summary>
+            OPC组
+            </summary>
+        </member>
+        <member name="T:Alliancer.OPCHelper.MyOPCAE.OPCAEEventChange">
+            <summary>
+            OPCAE事件改变委托
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="myEvents">事件信息</param>
+            <param name="refresh">刷新</param>
+            <param name="lastRefresh">最后一次刷新</param>
+        </member>
+        <member name="E:Alliancer.OPCHelper.MyOPCAE.AEEventChange">
+            <summary>
+            OPC事件改变委托实例
+            </summary>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCAE.SubscriptionLists">
+            <summary>
+            组的订阅集合
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyOPCAE.IpAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ipAddress"></param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.Connect">
+            <summary>
+            连接OPCAE服务器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.Disconnect">
+            <summary>
+            关闭服务
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.IsConnected">
+            <summary>
+            获取状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.CreatAEGroup(System.String,System.Boolean,System.Int32,System.Int32,System.Int32,Alliancer.OPCHelper.MyOPCAE.OPCAEEventChange)">
+            <summary>
+            创建组
+            </summary>
+            <param name="name">组名称</param>
+            <param name="isActive">是否启用</param>
+            <param name="bufferTime">缓存时间</param>
+            <param name="maxSize">最大大小</param>
+            <param name="keepAlive">保持连接</param>
+            <param name="eventChange">事件改变委托</param>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.Subscription_EventChanged(Opc.Ae.EventNotification[],System.Boolean,System.Boolean)">
+            <summary>
+            事件变化
+            </summary>
+            <param name="notifications"></param>
+            <param name="refresh"></param>
+            <param name="lastRefresh"></param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.SaveAttributes">
+            <summary>
+            保存节点信息
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.RemoveSubscription(System.String)">
+            <summary>
+            删除组
+            </summary>
+            <param name="subscriptionName">组名称</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.GetCategorys">
+            <summary>
+            获取节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.GetAttribute(System.Int32)">
+            <summary>
+            获取节点属性
+            </summary>
+            <param name="categorysID">节点ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCAE.SetGroupFilter(System.String,System.Int32[])">
+            <summary>
+            设置组的过滤器
+            </summary>
+            <param name="subscriptionName">组名称</param>
+            <param name="categories">要显示的事件ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:Alliancer.OPCHelper.MyAttribute">
+            <summary>
+            节点属性类
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyAttribute.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyAttribute.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyAttribute.DataType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyAttribute.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:Alliancer.OPCHelper.MyEventNotification">
+            <summary>
+            事件通知属性类
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.ConditionName">
+            <summary>
+            条件名称
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.AckRequired">
+            <summary>
+            需要确认
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.Quality">
+            <summary>
+            品质
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.NewState">
+            <summary>
+            新的状态
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.ChangeMask">
+            <summary>
+            更改掩码
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.SubConditionName">
+            <summary>
+            组名称
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.ActorID">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.Severity">
+            <summary>
+            严重程度
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.EventCategory">
+            <summary>
+            事件节点
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.EventType">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.Time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.SourceID">
+            <summary>
+            源ID
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.ClientHandle">
+            <summary>
+            客户端句柄
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.ActiveTime">
+            <summary>
+            活动时间
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.Cookie">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyEventNotification.Attributes">
+            <summary>
+            属性类
+            </summary>
+        </member>
+        <member name="T:Alliancer.OPCHelper.MyOPCDA">
+            <summary>
+            OPCDA帮助类
+            </summary>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCDA.DAOPCServer">
+            <summary>
+            DA服务器
+            </summary>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCDA.mySubscription">
+            <summary>
+            默认的组
+            </summary>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCDA.factory">
+            <summary>
+            OPC工厂
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyOPCDA.IpAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="T:Alliancer.OPCHelper.MyOPCDA.OPCDADataChanged">
+            <summary>
+            OPC DA数据改变委托
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="groupName">组名称</param>
+            <param name="requestHandle">请求句柄</param>
+            <param name="myItems">项信息集合</param>
+        </member>
+        <member name="E:Alliancer.OPCHelper.MyOPCDA.DADataChanged">
+            <summary>
+            数据改变委托实例
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ipAddress"></param>
+        </member>
+        <member name="F:Alliancer.OPCHelper.MyOPCDA.groupChangeDelegate">
+            <summary>
+            保存组订阅的委托集合
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.Connect">
+            <summary>
+            连接OPCDA服务器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.MyDisconnect">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.IsConnected">
+            <summary>
+            获取OPC状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.RemoveSubscription(System.String)">
+            <summary>
+            删除组
+            </summary>
+            <param name="subscriptionName">组的名称</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ModifySubscriptionState(System.String,System.String,System.Boolean,System.Int32,System.Int32,System.Single)">
+            <summary>
+            修改组的信息
+            </summary>
+            <param name="subscriptionName">要修改的组名称</param>
+            <param name="name">名称</param>
+            <param name="isActive">是否活动</param>
+            <param name="updateRate">刷新时间（毫秒）</param>
+            <param name="keepAlive">保持活动</param>
+            <param name="deadband">死区值</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.CreatGroup(System.String,System.Boolean,System.Int32,System.Int32,System.Single,Alliancer.OPCHelper.MyOPCDA.OPCDADataChanged)">
+            <summary>
+            创建组
+            </summary>
+            <param name="subscriptionName">组名称</param>
+            <param name="isActive">是否启用</param>
+            <param name="updateRate">刷新时间(毫秒)</param>
+            <param name="keepAlive">保持连接</param>
+            <param name="deadband">死区值</param>
+            <param name="oPCDADataChanged">数据变化委托</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.AddItems(System.String,Alliancer.OPCHelper.MyItem[])">
+            <summary>
+            添加项
+            </summary>
+            <param name="subscriptionName">组的名称</param>
+            <param name="itemNames">项数据(名称)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.Subscription_DataChanged(System.Object,System.Object,Opc.Da.ItemValueResult[])">
+            <summary>
+            数据改变事件
+            </summary>
+            <param name="subscriptionHandle">组客户端句柄</param>
+            <param name="requestHandle"></param>
+            <param name="values">值集合</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.WriteItems(System.String,Alliancer.OPCHelper.MyItem[])">
+            <summary>
+            写入数据
+            </summary>
+            <param name="subscriptionName">组的名称</param>
+            <param name="myItems">项数据(值、客户端句柄)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ReadItems(System.String,System.String[])">
+            <summary>
+            读取项数据
+            </summary>
+            <param name="subscriptionName">组的客户端句柄</param>
+            <param name="itemNames">项的客户端句柄</param>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetCurrentBatchState">
+            <summary>
+            获取当前批次状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetSecondBatchState">
+            <summary>
+            获取下一个批次状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetProgramState">
+            <summary>
+            获取程序状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetPLCMessage">
+            <summary>
+            获取PLC消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetStopDeclaration">
+            <summary>
+            获取停机声明
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetMachineID">
+            <summary>
+            获取机台号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetCurrentBatchNumber">
+            <summary>
+            获取当前批次号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetSecondBatchNumber">
+            <summary>
+            获取下一个批次号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetCurrentHostProductionID">
+            <summary>
+            获取当前生产ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetSecondHostProductionID">
+            <summary>
+            获取下一个生产ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetControllerType">
+            <summary>
+            获取控制器类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetAlarmList">
+            <summary>
+            获取警报列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetAlaemState">
+            <summary>
+            获取警报状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetMainProgramList">
+            <summary>
+            获取主程序列表
+            </summary>
+            <returns>主程序号，名称</returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetLastActiveFunction_Window1">
+            <summary>
+            获取最后活动功能_窗口1
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetLastActiveFunction_Window2">
+            <summary>
+            获取最后活动功能_窗口2
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetLastActiveFunction_Window3">
+            <summary>
+            获取最后活动功能_窗口3
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetLastActiveFunction_Window4">
+            <summary>
+            获取最后活动功能_窗口4
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetActiveFunctions">
+            <summary>
+            获取当前活动功能
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetProgramNumAndName">
+            <summary>
+            获取程序编号和名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetMainWindow1LineNumber">
+            <summary>
+            获取主程序窗口1的行号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetSubWindow1LineNumber">
+            <summary>
+            获取子程序窗口1的行号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetAddWindow1LineNumber">
+            <summary>
+            获取附加程序窗口1的行号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetSubWindow1HostProgramNumber">
+            <summary>
+            获取子程序窗口1的程序号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetAddWindow1HostProgramNumber">
+            <summary>
+            获取附加程序窗口1的程序号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetMainWindow1HostProgramNumber">
+            <summary>
+            获取主程序窗口1的程序号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetProgramWindowsRunTimer">
+            <summary>
+            获取程序窗口的运行时间
+            下标0：窗口1的运行时间，下标1：窗口2的运行时间，下标2：窗口3的运行时间，下标3：窗口4的运行时间，下标4：批次的总时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.GetControllerBatchBatchSummary">
+            <summary>
+            获取批次的摘要（批次剩余时间-下一个操作工-下一个物料准备-理论时间-警报时间-停止时间）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.SetProgramState_Stop">
+            <summary>
+            设置程序状态为停止
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.SetProgramState_Start">
+            <summary>
+            设置程序状态为开始
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.SetProgramState_Halt">
+            <summary>
+            设置程序状态为手动功能
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ClearAlarm">
+            <summary>
+            清除警报
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.DownloadCurrentBatch(System.String)">
+            <summary>
+            下载当前批次
+            </summary>
+            <param name="batchXml">批次的XML</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.DownloadSecondBatch(System.String)">
+            <summary>
+            下载下一个批次
+            </summary>
+            <param name="batchXml"></param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ClearNextBatch">
+            <summary>
+            清除下一个批次
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ClearCurrentBatch">
+            <summary>
+            清除当前批次
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.SetWindowStep(System.Int32,System.Byte)">
+            <summary>
+            设置窗口位置
+            </summary>
+            <param name="window">窗口位置</param>
+            <param name="line">行数</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.SetLineStep(System.Byte)">
+            <summary>
+            设置行的位置
+            </summary>
+            <param name="line"></param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.SendMessage(System.Collections.Generic.List{System.String})">
+            <summary>
+            发送消息
+            </summary>
+            <param name="messages">消息内容列表</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ScheduledBatches(System.String)">
+            <summary>
+            中控排单
+            </summary>
+            <param name="xmlValue">排单Xml</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.SetFunctionValue(System.String)">
+            <summary>
+            设置功能的参数值
+            </summary>
+            <param name="xmlValue">功能参数Xml</param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.DiscontinueBatch">
+            <summary>
+            中止批次
+            </summary>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.EasyGet(System.String)">
+            <summary>
+            简简单单的读
+            </summary>
+            <param name="itemName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.EasySet(System.String,System.Object)">
+            <summary>
+            简简单单的写
+            </summary>
+            <param name="itemName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ReadItems(System.String[])">
+            <summary>
+            读取项
+            </summary>
+            <param name="itemName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Alliancer.OPCHelper.MyOPCDA.ReadItems(Alliancer.OPCHelper.MyItem[])">
+            <summary>
+            读取项
+            </summary>
+            <param name="itemName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Alliancer.OPCHelper.MyItem">
+            <summary>
+            项类
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyItem.ItemName">
+            <summary>
+            项的名称
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyItem.ClientHandle">
+            <summary>
+            客户端句柄
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyItem.ServerHandle">
+            <summary>
+            服务端句柄
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyItem.Quality">
+            <summary>
+            品质
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyItem.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.MyItem.Timestamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="T:Alliancer.OPCHelper.StatusPageClass">
+            <summary>
+            发送消息类
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.StatusPageClass.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.StatusPageClass.Messages">
+            <summary>
+            消息列表
+            </summary>
+        </member>
+        <member name="T:Alliancer.OPCHelper.HostMainProgramListClass">
+            <summary>
+            控制器主程序列表类
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.ProgramNumber">
+            <summary>
+            程序号
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.HostProgramNumber">
+            <summary>
+            中控程序号
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.ProgramName">
+            <summary>
+            程序名称
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.ProgramLength">
+            <summary>
+            程序长度
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.NumberOfExecutions">
+            <summary>
+            使用次数
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.ProgramTime">
+            <summary>
+            程序时间
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.TypeVersionType">
+            <summary>
+            类型版本类型
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.TypeVersionMajor">
+            <summary>
+            主要版本类型
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.TypeVersionMinor">
+            <summary>
+            次要版本类型
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.DateLastChange">
+            <summary>
+            最后更改时间
+            </summary>
+        </member>
+        <member name="P:Alliancer.OPCHelper.HostMainProgramListClass.Comment">
+            <summary>
+            备注
+            </summary>
+        </member>
+    </members>
+</doc>

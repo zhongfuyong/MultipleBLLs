@@ -1,0 +1,1151 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AlliancerLinkToDispenserHostReadConfig</name>
+    </assembly>
+    <members>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation">
+            <summary>
+            数据库操作类
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetT_CfgsTP(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取配置参数数据
+            </summary>
+            <param name="Con"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetCfgBatchTexts(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取批次文本数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetCfgBatchParams(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取批次参数数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetCfgConsumptions(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取批次消耗数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetCfgFctStops(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取批次功能停止数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetCfgStopDecls(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取批次停机数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetCfgAlarms(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取批次警报数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.DatabaseOperation.GetCfgFunctions(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取批次功能组数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.InputOutputSet_Host">
+            <summary>
+            主机导入导出设置实体类
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputSet_Host.Information">
+            <summary>
+            基础信息
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputSet_Host.InputOutputDatas">
+            <summary>
+            导入导出数据集合
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.InputOutputData">
+            <summary>
+            导入导出数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.Index">
+            <summary>
+            数据排序号
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.ImportExport">
+            <summary>
+            是否输入输出   true：导入 false：导出
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FileID">
+            <summary>
+            FileID
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.ListName">
+            <summary>
+            列表名
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FolderPath">
+            <summary>
+            Xml文件夹路径
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.PathSelectSubscript">
+            <summary>
+            路径模块单选下标
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.XmlExtendedFormat">
+            <summary>
+            扩展文件格式
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.LogFolderPath">
+            <summary>
+            日志文件夹路径
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.LogFileName">
+            <summary>
+            日志文件名称
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.LoginToFile">
+            <summary>
+            日志到文件勾选
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.LoginDebug">
+            <summary>
+            登录调试勾选
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.Activation">
+            <summary>
+            激活勾选
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.MachineCount">
+            <summary>
+            机台数
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.MachineSelects">
+            <summary>
+            已选机台数据集合
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerOneHexadecimal">
+            <summary>
+            事件触发器1数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerOneData">
+            <summary>
+            事件触发数据1
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.DelaySeconds">
+            <summary>
+            执行延迟秒
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerFourHexadecimal">
+            <summary>
+            事件触发器4数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerFourData">
+            <summary>
+            事件触发数据4
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerTwoHexadecimal">
+            <summary>
+            事件触发器2数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerTwoData">
+            <summary>
+            事件触发数据2
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TypeCheck">
+            <summary>
+            类型选择
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.DatabaseType">
+            <summary>
+            数据库类型选择
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.DatabaseName">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.ServerName">
+            <summary>
+            服务器名称
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.DatabaseLoginName">
+            <summary>
+            数据库登录名
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.DatabasePassword">
+            <summary>
+            数据库登录密码
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TextFormat">
+            <summary>
+            文本格式勾选
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.EventTrigerThreeCount">
+            <summary>
+            事件触发器3总数
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TimeBased">
+            <summary>
+            基于时间勾选
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FritEventTrigerThreeSwitch">
+            <summary>
+            事件触发器3第一个开关
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.StartInterval">
+            <summary>
+            启动间隔
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.EndInterval">
+            <summary>
+            结束间隔
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FixedTime">
+            <summary>
+            固定时间
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.MakeInterval">
+            <summary>
+            使间隔勾选
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.WeekCheckData">
+            <summary>
+            星期勾选
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerThreeHexadecimal">
+            <summary>
+            事件触发器3信息
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.TrigerThreeData">
+            <summary>
+            事件触发数据3
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.DatabaseFirstFieldData">
+            <summary>
+            首条字段数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FirstStringLength">
+            <summary>
+            首条字符串长度
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FirstTableName">
+            <summary>
+            首条表名称
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FirstLabel">
+            <summary>
+            首条标签
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FirstFieldSeparator1">
+            <summary>
+            首条字段分隔符1
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FirstFieldSeparator2">
+            <summary>
+            首条字段分隔符2
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.FirstRecordSeparator">
+            <summary>
+            首条记录分隔符
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.DatabaseSecondFieldData">
+            <summary>
+            次条字段数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.SecondStringLength">
+            <summary>
+            次条字符串长度
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.SecondTableName">
+            <summary>
+            次条表名称
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.SecondLabel">
+            <summary>
+            次条标签
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.SecondFieldSeparator1">
+            <summary>
+            次条字段分隔符1
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.SecondFieldSeparator2">
+            <summary>
+            次条字段分隔符
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.SecondRecordSeparator">
+            <summary>
+            次条记录分隔符
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.InputOutputData.Priority">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.EventTriggerData">
+            <summary>
+            事件触发器数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.EventTriggerData.FirstName">
+            <summary>
+            中文名
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.EventTriggerData.SecondName">
+            <summary>
+            英文名
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.EventTriggerData.Index">
+            <summary>
+            定位
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.EventTriggerData.Num">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.EventTriggerData.Sign">
+            <summary>
+            导入导出标记
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.EventTriggerData.OPCItem">
+            <summary>
+            对应OPC监听的项
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData">
+            <summary>
+            数据库字段数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.SortNum">
+            <summary>
+            排序号
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.FieldSign">
+            <summary>
+            字段
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.FieldName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.FormatIndex">
+            <summary>
+            格式选择下标
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.DivisionData">
+            <summary>
+            除-数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.MultiplicationData">
+            <summary>
+            乘-数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.FixedValue">
+            <summary>
+            固定值
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.ColumnName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.Alignment">
+            <summary>
+            对齐
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.LeadingChar">
+            <summary>
+            前导字符
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.StringLenght">
+            <summary>
+            字符串长度
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.DatabaseField">
+            <summary>
+            对用数据库的字段数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.DatabaseFieldData.DatabaseSign">
+            <summary>
+            导入导出标记
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.FieldData">
+            <summary>
+            字段数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.FieldData.FieldName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.FieldData.FieldType">
+            <summary>
+            字段类型
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.FieldData.FieldHexadecimal">
+            <summary>
+            字段16进制数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.FieldData.FirstOrSecond">
+            <summary>
+            首条或次条记录标记
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.FieldData.DatabaseField">
+            <summary>
+            对应的数据库字段
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams">
+            <summary>
+            TreatmentParams
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_ParamType">
+            <summary>
+            c_ParamType
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_Unit">
+            <summary>
+            c_Unit
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_DecFormat">
+            <summary>
+            c_DecFormat
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_Minimum">
+            <summary>
+            c_Minimum
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_Maximum">
+            <summary>
+            c_Maximum
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_Default">
+            <summary>
+            c_Default
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgTreatmentParams.c_ActiveForAll">
+            <summary>
+            c_ActiveForAll
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_Machines">
+            <summary>
+            实体 t_Machines
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.t_Machines.#ctor">
+            <summary>
+            实体 t_Machines
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_Name">
+            <summary>
+            c_Name(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_LongName">
+            <summary>
+            c_LongName
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MachineType_Id">
+            <summary>
+            c_MachineType_Id
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MachineProperty_Id">
+            <summary>
+            c_MachineProperty_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_VirtualMachineGroup_Id">
+            <summary>
+            c_VirtualMachineGroup_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_CsName">
+            <summary>
+            c_CsName(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_CsPort">
+            <summary>
+            c_CsPort(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_DUAddr">
+            <summary>
+            c_DUAddr(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_DUPort">
+            <summary>
+            c_DUPort(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_PrAddr">
+            <summary>
+            c_PrAddr(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_PrPort">
+            <summary>
+            c_PrPort(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_SubPrAddr">
+            <summary>
+            c_SubPrAddr(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_ConfigFilename">
+            <summary>
+            c_ConfigFilename
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_CanBeMaster">
+            <summary>
+            c_CanBeMaster
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MinLoadWeight">
+            <summary>
+            c_MinLoadWeight
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MaxLoadWeight">
+            <summary>
+            c_MaxLoadWeight
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MinLoadFluid">
+            <summary>
+            c_MinLoadFluid
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MaxLoadFluid">
+            <summary>
+            c_MaxLoadFluid
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_YearOfConstr">
+            <summary>
+            c_YearOfConstr
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_SerialNo">
+            <summary>
+            c_SerialNo
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_ManuFacturer">
+            <summary>
+            c_ManuFacturer
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_CtrlYearOfConstr">
+            <summary>
+            c_CtrlYearOfConstr
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_CtrlSerialNo">
+            <summary>
+            c_CtrlSerialNo
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_CtrlManuFacturer">
+            <summary>
+            c_CtrlManuFacturer
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MaxVolumeTank1">
+            <summary>
+            c_MaxVolumeTank1
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MaxVolumeTank2">
+            <summary>
+            c_MaxVolumeTank2
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_MaxVolumeTank3">
+            <summary>
+            c_MaxVolumeTank3
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_IsDosingMachine">
+            <summary>
+            c_IsDosingMachine
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_ShowInPlanning">
+            <summary>
+            c_ShowInPlanning
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_IsDummyMachine">
+            <summary>
+            c_IsDummyMachine
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_IsDissolvingMachine">
+            <summary>
+            c_IsDissolvingMachine
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_OPCName">
+            <summary>
+            c_OPCName(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_IsTankMonitoringMachine">
+            <summary>
+            c_IsTankMonitoringMachine(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_IsTankManagementMachine">
+            <summary>
+            c_IsTankManagementMachine(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_LinkedBatches">
+            <summary>
+            c_LinkedBatches(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_UseLinkedBatchesSequence">
+            <summary>
+            c_UseLinkedBatchesSequence(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_Machines.c_IsPrintingMachine">
+            <summary>
+            c_IsPrintingMachine(NOT NULL)
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchTexts">
+            <summary>
+            配置批次文本数据
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchTexts.#ctor">
+            <summary>
+            实体 t_CfgBatchTexts
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchTexts.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchTexts.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchTexts.c_Edit">
+            <summary>
+            c_Edit
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchTexts.c_ListIdx">
+            <summary>
+            c_ListIdx
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchTexts.c_ActiveForAll">
+            <summary>
+            c_ActiveForAll
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams">
+            <summary>
+            配置批次参数数据
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_ParamType">
+            <summary>
+            c_ParamType
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_Unit">
+            <summary>
+            c_Unit
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_DecFormat">
+            <summary>
+            c_DecFormat
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_Minimum">
+            <summary>
+            c_Minimum
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_Maximum">
+            <summary>
+            c_Maximum
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_Default">
+            <summary>
+            c_Default
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_ActiveForAll">
+            <summary>
+            c_ActiveForAll
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgBatchParams.c_ParamCategory">
+            <summary>
+            c_ParamCategory
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgConsumptions">
+            <summary>
+            配置消耗数据
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.t_CfgConsumptions.#ctor">
+            <summary>
+            实体 t_CfgConsumptions
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgConsumptions.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgConsumptions.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgConsumptions.c_Unit">
+            <summary>
+            c_Unit
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgConsumptions.c_CostFactor">
+            <summary>
+            c_CostFactor
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgConsumptions.c_Currency">
+            <summary>
+            c_Currency
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgFctStops">
+            <summary>
+            配置功能停止数据
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.t_CfgFctStops.#ctor">
+            <summary>
+            实体 t_CfgFctStops
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgFctStops.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgFctStops.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgStopDecls">
+            <summary>
+            配置批次停机数据
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.t_CfgStopDecls.#ctor">
+            <summary>
+            实体 t_CfgStopDecls
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgStopDecls.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgStopDecls.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgStopDecls.c_RGBColor">
+            <summary>
+            c_RGBColor
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgAlarms">
+            <summary>
+            配置警告数据
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.t_CfgAlarms.#ctor">
+            <summary>
+            实体 t_CfgAlarms
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgAlarms.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgAlarms.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgAlarms.c_RGBColor">
+            <summary>
+            c_RGBColor
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.t_CfgFunctions">
+            <summary>
+            配置功能组数据
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.t_CfgFunctions.#ctor">
+            <summary>
+            实体 t_CfgFunctions
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgFunctions.c_Id">
+            <summary>
+            主键 c_Id(NOT NULL)
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgFunctions.c_Name">
+            <summary>
+            c_Name
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgFunctions.c_RGBColor">
+            <summary>
+            c_RGBColor
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.t_CfgFunctions.c_ActiveForAll">
+            <summary>
+            c_ActiveForAll
+            </summary>
+        </member>
+        <member name="T:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig">
+            <summary>
+            读取配置文件类
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.FieldContent">
+            <summary>
+            字段配置文件内容
+            </summary>
+        </member>
+        <member name="F:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.EventTriggerFile">
+            <summary>
+            事件触发器文件路径
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.FieldDatas">
+            <summary>
+            字段配置文件类
+            </summary>
+        </member>
+        <member name="P:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.EventTriggerDatas">
+            <summary>
+            所有事件触发器数据集合
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="FiledPath">字段配置文件地址</param>
+            <param name="Con">SQL连接</param>
+            <param name="TriggerFile">事件触发器文件路径</param>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.ArrayToEntityClass(System.String)">
+            <summary>
+            字符串数组转实体类
+            </summary>
+            <param name="FilePath">Bin文件地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GenerateEntityClass(System.String[])">
+            <summary>
+            生成导入导出数据实体类
+            </summary>
+            <param name="Data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetDatabaseFieldData(System.String)">
+            <summary>
+            字符串转数据库字段数据集合
+            </summary>
+            <param name="Data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetFirstSpliceData(System.String)">
+            <summary>
+            获取第一个拼接数据
+            </summary>
+            <param name="Array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetSecondSpliceData(System.String)">
+            <summary>
+            获取第二个拼接数据
+            </summary>
+            <param name="Array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetFirstSpliceDataHasField(System.String[])">
+            <summary>
+            获取第一段拼接数据（含有字段数据）
+            </summary>
+            <param name="Array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.SetDataIndex(System.Collections.Generic.List{AlliancerLinkToDispenserHostReadConfig.InputOutputData})">
+            <summary>
+            设置数据排序号
+            </summary>
+            <param name="InputOutputDatas"></param>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetLogFilename(System.String)">
+            <summary>
+            获取日志文件名字
+            </summary>
+            <param name="Array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.ComparativeData(System.String,System.String)">
+            <summary>
+            对比数据大小
+            </summary>
+            <param name="ContrastValue1"></param>
+            <param name="ContrastValue2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetDatabasePassword(System.String)">
+            <summary>
+            获取数据库登录密码
+            </summary>
+            <param name="Data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.SetFiledDataName(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            设置字段数据Name
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetEventTriggerDatas(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            获取所有事件触发器数据
+            </summary>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetFieldDatasByContent(System.String)">
+            <summary>
+            获取字段数据
+            </summary>
+            <param name="Content">字段配置文件内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.HexadecimalToString(System.String)">
+            <summary>
+            将16进制字符串转换为文本
+            </summary>
+            <param name="Hexadecimal">16进制数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.HexadecimalToDecimal(System.String)">
+            <summary>
+            16进制转10进制数据
+            </summary>
+            <param name="Hexadecimal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetBinTOHexadecimal(System.String)">
+            <summary>
+            Bin文件转16进制数据
+            </summary>
+            <param name="FilePath">文件地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetEventTriggerDatas(System.String,System.Collections.Generic.List{AlliancerLinkToDispenserHostReadConfig.EventTriggerData},System.Boolean)">
+            <summary>
+            根据事件触发器1、2、4的16进制数据获取
+            </summary>
+            <param name="Data">16进制数据</param>
+            <param name="EventTriggerDatas">事件数据</param>
+            <param name="IsImportExport">导入、导出标记</param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetEventTrigger3Datas(System.Collections.Generic.List{System.String},System.Collections.Generic.List{AlliancerLinkToDispenserHostReadConfig.EventTriggerData})">
+            <summary>
+            获取事件触发数据3数据
+            </summary>
+            <param name="Data"></param>
+            <param name="EventTriggerDatas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.GetWeekData(System.Int32)">
+            <summary>
+            获取星期数据
+            </summary>
+            <param name="WeekData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.Get8BitData(System.String)">
+            <summary>
+            获取八位数据
+            </summary>
+            <param name="Data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlliancerLinkToDispenserHostReadConfig.ReadDispenserConfig.Calculation(System.Byte[])">
+            <summary>
+            计算8位算法
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

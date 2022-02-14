@@ -1,0 +1,962 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPCTOTCPLIB</name>
+    </assembly>
+    <members>
+        <member name="T:OPCTOTCPLIB.Client.SocketClient">
+            <summary>
+            套接字客户端
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.Client.SocketClient.OPCDADisconnects">
+            <summary>
+            OPC DA掉线委托
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.Client.SocketClient.OPCDAConnects">
+            <summary>
+            OPC DA连接委托
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.Client.SocketClient.OPCAEConnects">
+            <summary>
+            OPC AE 连接委托
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.Client.SocketClient.OPCAEDisconnects">
+            <summary>
+            OPC AE掉线委托
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="E:OPCTOTCPLIB.Client.SocketClient.OPCDADisconnected">
+            <summary>
+            OPC DA掉线委托
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.Client.SocketClient.OPCDAConnected">
+            <summary>
+            OPC DA重新连接委托
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.Client.SocketClient.OPCAEConnected">
+            <summary>
+            OPC AE重新连接
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.Client.SocketClient.OPCAEDisconnected">
+            <summary>
+            OPC AE断开连接
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.Client.SocketClient.TCPServerDisconnect">
+            <summary>
+            TCP服务掉线委托
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.Client.SocketClient.ServerDisconnect">
+            <summary>
+            TCP服务掉线委托
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.Client.SocketClient.ServerConnectCallBacks">
+            <summary>
+            连接服务回调
+            </summary>
+            <param name="isSuccess">是否成功</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="E:OPCTOTCPLIB.Client.SocketClient.ServerConnectCallBack">
+            <summary>
+            连接服务回调
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.ConnectServer(System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            连接服务
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="port"></param>
+            <param name="timeOut">超时时间</param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.MyServerDisconnect">
+            <summary>
+            TCP服务掉线
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.MyServerConnectCallBack(System.Boolean,System.String)">
+            <summary>
+            连接服务回调
+            </summary>
+            <param name="isSuccess">是否连接成功</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.ReadItems(System.String,System.String[])">
+            <summary>
+            读取项
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="items">项名称集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.WriteItems(System.String,Alliancer.OPCHelper.MyItem[])">
+            <summary>
+            写入项
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="items">项集合(名称和值)</param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.SubscribeItems(System.String,System.String[],System.Int32,Alliancer.OPCHelper.MyOPCDA.OPCDADataChanged)">
+            <summary>
+            订阅项
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="items">要订阅的项</param>
+            <param name="updateRate">组的刷新时间</param>
+            <param name="dataChanged">数据改变要执行的方法 ---IP地址,组名称,请求句柄,项集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.GetOPCServerState(System.String)">
+            <summary>
+            获取OPC服务状态
+            </summary>
+            <param name="ipAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.CancelSubscribeItems(System.String,System.String)">
+            <summary>
+            取消项订阅
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.Disconnect">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.OPCDAServerDisconnected(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            OPC DA断开
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.OPCDAServerConnected(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            OPC DA连接
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.OPCAEServerConnected(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            OPC AE重新连接
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.OPCAEServerDisconnected(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            OPC AE掉线
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.Subscribe(System.String,System.Boolean,System.Int32,System.Int32,System.Int32,Alliancer.OPCHelper.MyOPCAE.OPCAEEventChange,System.Int32[])">
+            <summary>
+            订阅OPC AE
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="isActive">是否启用</param>
+            <param name="maxSize">最大大小</param>
+            <param name="bufferTime">缓存时间</param>
+            <param name="keepAlive">保持连接</param>
+            <param name="eventChange">委托 ----- IP地址,项信息,refresh,lastRefresh</param>
+            <param name="filterCategories">过滤类别</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.CancelSubscribe(System.String,System.String)">
+            <summary>
+            取消订阅OPC AE
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <param name="groupName">组名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.GetAEServerState(System.String)">
+            <summary>
+            获取OPC AE服务
+            </summary>
+            <param name="ipAddress">IP地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.IsConnectTCP">
+            <summary>
+            是否已连接TCP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClient.AddOPCServer(System.String)">
+            <summary>
+            添加OPC服务
+            </summary>
+            <param name="ipAddress"></param>
+        </member>
+        <member name="P:OPCTOTCPLIB.Client.SocketClientHelper.TimeOut">
+            <summary>
+            超时时间
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Client.SocketClientHelper.EventFactory">
+            <summary>
+            事件线程工厂 (guid,AutoResetEvent)
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Client.SocketClientHelper.TCPAgreementFactory">
+            <summary>
+            结果信息工厂 (guid,信息)
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Client.SocketClientHelper.OPCDASubscribeFactory">
+            <summary>
+            OPC DA订阅工厂  (组名称,委托)
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Client.SocketClientHelper.OPCDAReconnectFactory">
+            <summary>
+            OPC DA 需要重连时订阅的组 (IP 地址，OPC信息列表)
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Client.SocketClientHelper.OPCAESubscribeFactory">
+            <summary>
+            OPC AE 订阅工厂
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Client.SocketClientHelper.OPCAEReconnectFactory">
+            <summary>
+            OPC AE 需要重连订阅的组(IP 地址，OPC信息列表)
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.#cctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.MySocketClient_ServerConnectCallBack(System.Boolean,System.String)">
+            <summary>
+            连接服务回调
+            </summary>
+            <param name="isSuccess">是否连接成功</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.MySocketClient_ServerDisconnect">
+            <summary>
+            服务断开委托
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.Connect(System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            连接服务
+            </summary>
+            <param name="iPAddress">IP地址</param>
+            <param name="port">端口</param>
+            <param name="timeOut">超时时间(毫秒)</param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.MySocketClient_NewMessage(System.Int32,System.Byte[])">
+            <summary>
+            新消息委托
+            </summary>
+            <param name="bufferSize"></param>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.RuleFactory(System.Object)">
+            <summary>
+            处理内容
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.OPCDAReconnectFunction(System.String)">
+            <summary>
+            重连OPC DA订阅方法
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.OPCAEReconnectFunction(System.String)">
+            <summary>
+            重连OPC AE订阅方法
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.OTTSendData(OPCTOTCPLIB.Entity.TCPAgreement)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="agreement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.ReadItems(System.String,System.String[])">
+            <summary>
+            读取项
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.Send_WriteItems(System.String,Alliancer.OPCHelper.MyItem[])">
+            <summary>
+            写入项
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="myItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.Send_SubscribeItems(System.String,System.String[],System.Int32,Alliancer.OPCHelper.MyOPCDA.OPCDADataChanged)">
+            <summary>
+            订阅项
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="items"></param>
+            <param name="updateRate"></param>
+            <param name="dataChanged"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.Send_GetOPCServerState(System.String)">
+            <summary>
+            获取OPC服务状态
+            </summary>
+            <param name="ipAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.Send_CancalSubscribeItem(System.String,System.String)">
+            <summary>
+            取消项订阅
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.Disconnect">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.Subscribe(System.String,System.Boolean,System.Int32,System.Int32,System.Int32,Alliancer.OPCHelper.MyOPCAE.OPCAEEventChange,System.Int32[])">
+            <summary>
+            订阅OPC AE
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="isActive"></param>
+            <param name="maxSize"></param>
+            <param name="bufferTime"></param>
+            <param name="keepAlive"></param>
+            <param name="eventChange"></param>
+            <param name="filterCategories"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.CancelSubscribe(System.String,System.String)">
+            <summary>
+            取消AE订阅
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.GetOPCAEServerState(System.String)">
+            <summary>
+            获取OPC AE服务状态
+            </summary>
+            <param name="ipAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.IsConnectTCP">
+            <summary>
+            是否连接TCP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Client.SocketClientHelper.AddOPCServer(System.String)">
+            <summary>
+            添加OPC服务
+            </summary>
+            <param name="ipAddress"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.Entity.OPCAEInfo">
+            <summary>
+            OPC AE信息类
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.LocalEndPoint">
+            <summary>
+            本地终结点
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.GroupName">
+            <summary>
+            组名称
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.Error">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.OPCServerState">
+            <summary>
+            OPC服务状态
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.IsActive">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.BufferTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.MaxSize">
+            <summary>
+            最大大小
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.KeepAlive">
+            <summary>
+            保持连接
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.FilterCategories">
+            <summary>
+            过滤类别集合
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCAEInfo.Notifications">
+            <summary>
+            OPC AE信息
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.Entity.OPCDAInfo">
+            <summary>
+            OPC信息类
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCDAInfo.LocalEndPoint">
+            <summary>
+            本地终结点
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCDAInfo.GroupName">
+            <summary>
+            组名称
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCDAInfo.UpdateRate">
+            <summary>
+            刷新间隔(毫秒)
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCDAInfo.OPCServerState">
+            <summary>
+            OPC服务状态
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCDAInfo.IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCDAInfo.Items">
+            <summary>
+            项集合
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.OPCDAInfo.Error">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.Entity.TCPAgreement">
+            <summary>
+            TCP协议类
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.TCPAgreement.InfoGuid">
+            <summary>
+            信息标识
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.TCPAgreement.Hand">
+            <summary>
+            请求头
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.TCPAgreement.ContentLength">
+            <summary>
+            内容长度
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.TCPAgreement.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.Entity.TCPAgreement.LeftOver">
+            <summary>
+            剩下的字节
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Entity.TCPAgreement.ToBytes">
+            <summary>
+            TCP协议类转成字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Entity.TCPAgreement.FromBytes(System.Byte[])">
+            <summary>
+            字节转换TCP协议类
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Entity.TCPAgreement.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Entity.TCPAgreement.#ctor(System.Byte,System.Int32,System.Byte[])">
+            <summary>
+            有参构造
+            </summary>
+            <param name="hand"></param>
+            <param name="contentLength"></param>
+            <param name="content"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.OPC.OTTOPCHelper">
+            <summary>
+            OPC帮助类
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.#cctor">
+            <summary>
+            静态块
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.OPC.OTTOPCHelper.ConnectedOPC">
+            <summary>
+            已连接IP列表
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.ConnectOPC(System.Object)">
+            <summary>
+            连接OPC
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.MySocketServer_ClientOffLine(System.String)">
+            <summary>
+            客户端掉线通知
+            </summary>
+            <param name="LocalEndPoint"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.CloseOPCServers">
+            <summary>
+            关闭所有OPC服务
+            </summary>
+        </member>
+        <member name="F:OPCTOTCPLIB.OPC.OTTOPCHelper.DAFactory">
+            <summary>
+            OPCDA工厂 (IP地址,OPC连接)
+            </summary>
+        </member>
+        <member name="P:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCDASubscribeFactory">
+            <summary>
+            OPC订阅信息工厂(guid,订阅信息)
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.OPC.OTTOPCHelper.DADataChange">
+            <summary>
+            数据变化委托DA
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.OPC.OTTOPCHelper.DAServerConnected">
+            <summary>
+            服务连接委托DA
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.OPC.OTTOPCHelper.DAServerDisconnected">
+            <summary>
+            服务断开委托DA
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="E:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCDADataChange">
+            <summary>
+            数据变化委托实例DA
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCDAServerConnected">
+            <summary>
+            服务连接委托实例DA
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCDAServerDisconnected">
+            <summary>
+            服务断开委托实例DA
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.ReconnectionOPCDA(System.Object)">
+            <summary>
+            无限重新连接OPC DA
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.MonitorOPCStateDA(System.Object)">
+            <summary>
+            监控OPC状态 DA
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.ReadItemss(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            读取OPC DA项
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.WriteItems(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            写入OPC DA项
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.SubscribeItems(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            订阅OPC DA项
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.Subscription_DataChanged(System.String,System.String,System.Object,Alliancer.OPCHelper.MyItem[])">
+            <summary>
+            DA数据改变事件
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="groupName"></param>
+            <param name="requestHandle"></param>
+            <param name="myItems"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.CancalSubscribe(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            取消DA组订阅
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.GetOPCServerState(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            获取OPCDA服务状态
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.ClientDisconnect(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            断开DA连接
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.AddOPCServer(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            添加OPC服务
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="F:OPCTOTCPLIB.OPC.OTTOPCHelper.AEFactory">
+            <summary>
+            OPCAE 工厂 (IP地址,OPC连接)
+            </summary>
+        </member>
+        <member name="F:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCAESubscribeFactory">
+            <summary>
+            OPC AE订阅信息工厂 (GUID,订阅信息)
+            </summary>
+        </member>
+        <member name="T:OPCTOTCPLIB.OPC.OTTOPCHelper.AEDataChange">
+            <summary>
+            数据变化委托AE
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.OPC.OTTOPCHelper.AEServerConnected">
+            <summary>
+            服务连接委托 AE
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.OPC.OTTOPCHelper.AEServerDisconnected">
+            <summary>
+            服务断开委托 AE
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="E:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCAEDataChange">
+            <summary>
+            数据改变委托实例 AE
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCAEServerConnected">
+            <summary>
+            服务连接委托实例 AE
+            </summary>
+        </member>
+        <member name="E:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCAEServerDisconnected">
+            <summary>
+            服务断开委托实例 AE
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.MonitorOPCStateAE(System.Object)">
+            <summary>
+            监控OPC AE
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.ReconnectionOPCAE(System.Object)">
+            <summary>
+            无限重新连接 AE
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.CreateSubscribe(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            添加AE订阅
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.OPCAEChange(System.String,System.Collections.Generic.List{Alliancer.OPCHelper.MyEventNotification},System.Boolean,System.Boolean)">
+            <summary>
+            OPC AE事件更改
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="notifications"></param>
+            <param name="refresh"></param>
+            <param name="lastRefresh"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.CancalSubscribe(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            取消AE订阅组
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.GetOPCServerState(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            获取AE服务状态
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.OPC.OTTOPCHelper.ClientDisconnect(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            客户端断开AE连接  DA AE共用一个断开
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.Server.SocketServer">
+            <summary>
+            套接字服务端
+            </summary>
+        </member>
+        <member name="F:OPCTOTCPLIB.Server.SocketServer.SocketMap">
+            <summary>
+            套接字,临时缓冲区
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.#cctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.MySocketServer_ClientOffLine(System.String)">
+            <summary>
+            客户端掉线委托
+            </summary>
+            <param name="LocalEndPoint"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.CreatServer(System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            创建服务
+            </summary>
+            <param name="iPAddress">IP地址</param>
+            <param name="port">端口</param>
+            <param name="listenCount">可连接数</param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.CloseServer">
+            <summary>
+            关闭服务
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.InitializationOPC(System.String[])">
+            <summary>
+            初始化OPC
+            </summary>
+            <param name="ipAddress">IP地址集合</param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.MySocketServer_NewMessage(System.Net.Sockets.Socket,System.Int32,System.Byte[])">
+            <summary>
+            有新消息
+            </summary>
+            <param name="socketClient"></param>
+            <param name="bufferSize"></param>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.MySocketServer_NewClient(System.Net.Sockets.Socket)">
+            <summary>
+            有新客户端连接
+            </summary>
+            <param name="socketClient"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.HandleMessage(System.Net.Sockets.Socket,System.Int32,System.Byte[])">
+            <summary>
+            处理新消息
+            </summary>
+            <param name="socketClient"></param>
+            <param name="bufferSize"></param>
+            <param name="buffer"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.SendData(System.String,OPCTOTCPLIB.Entity.TCPAgreement)">
+            <summary>
+            发送数据
+            </summary>
+            <param name="remoteEndPoint"></param>
+            <param name="agreement"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServer.SendDataToAllClient(OPCTOTCPLIB.Entity.TCPAgreement)">
+            <summary>
+            发送消息给所有客户端
+            </summary>
+            <param name="agreement"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.Server.SocketServerHelper">
+            <summary>
+            TCP服务帮助类
+            </summary>
+        </member>
+        <member name="F:OPCTOTCPLIB.Server.SocketServerHelper.SendData_Action">
+            <summary>
+            发送消息委托
+            </summary>
+        </member>
+        <member name="F:OPCTOTCPLIB.Server.SocketServerHelper.SendDataToAllClient">
+            <summary>
+            发送消息到所有客户端委托
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.#cctor">
+            <summary>
+            静态块
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.OTTOPCHelper_OPCAEServerDisconnected(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            OPC AE 服务断开通知
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.OTTOPCHelper_OPCAEServerConnected(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            OPC AE服务重新连接通知
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.OTTOPCHelper_OPCAEDataChange(OPCTOTCPLIB.Entity.OPCAEInfo)">
+            <summary>
+            OPC AE数据更改通知
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.RuleFactory(System.Object)">
+            <summary>
+            规则工厂 分发处理
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.OPCDADataChang(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            OPCDA订阅数据变化事件
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.OPCDAServerConnected(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            OPCDA连接通知
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:OPCTOTCPLIB.Server.SocketServerHelper.OPCDAServerDisconnected(OPCTOTCPLIB.Entity.OPCDAInfo)">
+            <summary>
+            OPCDA断开通知
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:OPCTOTCPLIB.Tool.ReadMachines">
+            <summary>
+            读取机台
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Tool.ReadMachines.Read">
+            <summary>
+            读取机台
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OPCTOTCPLIB.Tool.ReadMachines.GetRegistryValue(System.String,System.String)">
+            <summary>
+            获取注册表的内容
+            </summary>
+            <param name="path"></param>
+            <param name="paramName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OPCTOTCPLIB.Tool.CombineBytesTool">
+            <summary>
+            字节工具
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Tool.CombineBytesTool.ToArray(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            按照先后顺序合并字节数组，并返回合并后的字节数组。
+            </summary>
+            <param name="firstBytes">第一个字节数组</param>
+            <param name="firstIndex">第一个字节数组的开始截取索引</param>
+            <param name="firstLength">第一个字节数组的截取长度</param>
+            <param name="secondBytes">第二个字节数组</param>
+            <param name="secondIndex">第二个字节数组的开始截取索引</param>
+            <param name="secondLength">第二个字节数组的截取长度</param>
+            <returns></returns>
+        </member>
+        <member name="T:OPCTOTCPLIB.Tool.SerializeTool">
+            <summary>
+            实例化工具类
+            </summary>
+        </member>
+        <member name="M:OPCTOTCPLIB.Tool.SerializeTool.ObjectToBytes(System.Object)">
+            <summary> 
+            将一个object对象序列化，返回一个byte[]         
+            </summary> 
+            <param name="obj">能序列化的对象,需要添加可序列化标签</param>         
+            <returns>字节列表</returns> 
+        </member>
+        <member name="M:OPCTOTCPLIB.Tool.SerializeTool.BytesToObject``1(System.Byte[])">
+            <summary> 
+            将一个序列化后的byte[]还原         
+            </summary>
+            <param name="bytes">字节列表</param>         
+            <returns>object对象</returns> 
+        </member>
+    </members>
+</doc>
